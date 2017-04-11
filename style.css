@@ -1,3 +1,6 @@
+.clear-fix {
+  clear: both;
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,5 +9,25 @@
 }
 
 html, body {
+  height: 100%;
+}
+
+#topfish {
+  background-image: url(https://github.com/codefellows/seattle-201d21/raw/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png);
+  background-repeat: no-repeat;
+  background-color: #A54B35;
+  height: 40%;
+  width: 80%;
+  float: right;
+  background-position: top;
+}
+#mainbar {
+  background-color: #D7AC78;
+}
+
+#leftbar {
+  width: 20%;
+  background-color: #D9C172;
+  float: right;
   height: 100%;
 }
