@@ -7,6 +7,9 @@
 
 // Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
 //
+
+var firstandpikeUl = document.getElementById('firstandpike');
+
 var locFirstAndPike = {
   minCustomerHour: 23,
   maxCustomerHour: 65,
@@ -17,10 +20,14 @@ var locFirstAndPike = {
     return randomNumber;
   }
 };
+var firstandpikeLi;
 for (var i = 0; i < 15; i++) {
   var cookiePerHour = (locFirstAndPike.randomCustomer() * locFirstAndPike.advCustomerCookie);
-  cookiePerHour = Math.floor(cookiePerHour)
-  locFirstAndPike.simCookies.push(cookiePerHour)
+  cookiePerHour = Math.floor(cookiePerHour);
+  locFirstAndPike.simCookies.push(cookiePerHour);
+  firstandpikeLi = document.createElement('li');
+  firstandpikeLi.textContent = locFirstAndPike.simCookies[i];
+  firstandpikeUl.appendChild(firstandpikeLi);
 }
 var locSeaTacAirport = {
   minCustomerHour: 3,
