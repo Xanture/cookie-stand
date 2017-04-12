@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // First, create a separate JS object literal (no constructor functions... yet) for each shop location that does the following:
 //
@@ -7,15 +7,16 @@
 
 // Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
 //
-var hours = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: ']
+var hours = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '];
 
-var stores = [locFirstAndPikeTr, locSeaTacAirportTr, locSeattleCenterTr, locCapitolHillTr, locAlkiTr]
 
 var locFirstAndPikeTr = document.getElementById('firstandpike');
 var locSeaTacAirportTr = document.getElementById('seatacairport');
 var locSeattleCenterTr = document.getElementById('seattlecenter');
 var locCapitolHillTr = document.getElementById('capitolhill');
 var locAlkiTr = document.getElementById('alki');
+
+var storesTr = [locFirstAndPikeTr, locSeaTacAirportTr, locSeattleCenterTr, locCapitolHillTr, locAlkiTr];
 
 function CookieStore (minCustomerHour, maxCustomerHour, advCustomerCookie, simCookies) {
   this.minCustomerHour = minCustomerHour;
@@ -24,7 +25,7 @@ function CookieStore (minCustomerHour, maxCustomerHour, advCustomerCookie, simCo
   this.simCookies = simCookies;
 }
 
-CookieStore.prototype.randomCustomer = function(ranNumber) {
+CookieStore.prototype.randomCustomer = function() {
   this.ranNumber = Math.floor(Math.random() * (this.maxCustomerHour - this.minCustomerHour)) + this.minCustomerHour;
 };
 
@@ -34,19 +35,23 @@ var locSeattleCenter = new CookieStore (11, 38, 3.7, []);
 var locCapitolHill = new CookieStore (20, 38, 2.3, []);
 var locAlki = new CookieStore (2, 16, 4.6, []);
 
+var storeLocations = [locFirstAndPike, locSeaTacAirport, locSeattleCenter, locCapitolHill, locAlki];
 
-
-
-var storeLocTd;
-for (var storesarray = 0; storesarray < stores.length; storesarray++) {
-
-
-for (var i = 0; i < 15; i++) {
-  var cookiePerHour = (this.randomCustomer() * this.advCustomerCookie);
-  cookiePerHour = Math.floor(cookiePerHour);
-  this.simCookies.push(hours[i] + cookiePerHour +' cookies');
-  storeLocTd = document.createElement('td');
-  storeLocTd.textContent = locFirstAndPike.simCookies[i];
-  storeLocTr.appendChild(storeLocTd);
+for (var i = 0; i < storeLocations.length; i++) {
+  for (var j = 0; j < 15; j++) {
+    var cookiePerHour;
+    storeLocations[i].randomCustomer();
+    cookiePerHour = storeLocations[i].ranNumber * storeLocations[i].advCustomerCookie;
+    cookiePerHour = Math.floor(cookiePerHour);
+    storeLocations[i].simCookies.push(cookiePerHour + ' cookies');
+  }
 }
+
+var storeLocTr;
+for (var x = 0; x < storeLocations.length; x++) {
+  for (var y = 0; y < 15; y++)
+  storeLocTr = document.createElement('tr');
+  storeLocTr.textContent = storeLocations[x].simCookies[y];
+  console.log(storesTr[x]);
+  storesTr[x].appendChild(storeLocTr);
 }
