@@ -30,7 +30,7 @@ var locAlki = new CookieStore (2, 16, 4.6, []);
 var storeLocations = [locFirstAndPike, locSeaTacAirport, locSeattleCenter, locCapitolHill, locAlki];
 
 for (var i = 0; i < storeLocations.length; i++) {
-  for (var j = 0; j < 15; j++) {
+  for (var j = 0; j < hours.length; j++) {
     var cookiePerHour;
     storeLocations[i].randomCustomer();
     cookiePerHour = storeLocations[i].ranNumber * storeLocations[i].advCustomerCookie;
@@ -42,7 +42,7 @@ for (var i = 0; i < storeLocations.length; i++) {
 var storeLocTr;
 var storeLocTd;
 for (var x = 0; x < storeLocations.length; x++) {
-  for (var y = 0; y < 15; y++) {
+  for (var y = 0; y < hours.length; y++) {
     storeLocTr = document.createElement('td');
     storeLocTd = document.createElement('td');
     storeLocTd.textContent = hours[y];
