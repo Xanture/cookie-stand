@@ -51,3 +51,11 @@ for (var x = 0; x < storeLocations.length; x++) {
     storesTr[x].appendChild(storeLocTr);
   }
 }
+function handleProductCreateSubmit(event) {
+  event.preventDefault();
+  console.log('wut wut');
+}
+
+var createStore = document.getElementById('add-store');
+
+createStore.addEventListener('submit', handleProductCreateSubmit);
