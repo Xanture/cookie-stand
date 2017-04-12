@@ -1,14 +1,6 @@
 'use strict';
 
-// First, create a separate JS object literal (no constructor functions... yet) for each shop location that does the following:
-//
-// Stores the min/max hourly customers, and the average cookies per customer, in object properties
-//
-
-// Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
-//
 var hours = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '];
-
 
 var locFirstAndPikeTr = document.getElementById('firstandpike');
 var locSeaTacAirportTr = document.getElementById('seatacairport');
@@ -48,10 +40,14 @@ for (var i = 0; i < storeLocations.length; i++) {
 }
 
 var storeLocTr;
+var storeLocTd;
 for (var x = 0; x < storeLocations.length; x++) {
-  for (var y = 0; y < 15; y++)
-  storeLocTr = document.createElement('tr');
-  storeLocTr.textContent = storeLocations[x].simCookies[y];
-  console.log(storesTr[x]);
-  storesTr[x].appendChild(storeLocTr);
+  for (var y = 0; y < 15; y++) {
+    storeLocTr = document.createElement('td');
+    storeLocTd = document.createElement('td');
+    storeLocTd.textContent = hours[y];
+    storeLocTr.textContent = storeLocations[x].simCookies[y];
+    storesTr[x].appendChild(storeLocTd);
+    storesTr[x].appendChild(storeLocTr);
+  }
 }

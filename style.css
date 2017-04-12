@@ -42,3 +42,6 @@ html, body {
 #calc {
   font-family: Verdana;
 }
+tr, td, th {
+  border: 2px solid black;
+}
