@@ -11,7 +11,7 @@ html, body {
   height: 100%;
 }
 #topfish {
-  background-image: url(https://github.com/codefellows/seattle-201d21/raw/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png);
+  background-image: url(salmon.png);
   background-repeat: no-repeat;
   background-color: #A54B35;
   height: 40%;
@@ -36,15 +36,27 @@ html, body {
   float: right;
 }
 table, tr, td {
-  border: 2px solid black;
+  color: Red;
+  border: 2px solid purple;
   font-family: verdana;
   width: 70%;
   margin: auto;
 }
-td, tr {
+td {
+  background-color: rgba(47, 255, 11, 0.5);
   width: auto;
+}
+table {
+  background-image: url(salmon.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 #add-store {
   width: 30%;
   margin: auto;
+}
+#store-page {
+  background-image: url(https://mdn.mozillademos.org/files/11307/bubbles.png);
+  background-color: #84E8CE;
+
 }
