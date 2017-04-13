@@ -55,19 +55,9 @@ CookieStore.prototype.writetopage = function() {
     tablelocation.appendChild(tableStoreCookies);
   }
 };
-  // }
-// };
-// CookieStore.prototype.cookiedata = function() {
-//   var tablelocation = document.getElementById('cooltablebro');
-//   for (var c = 0; c < this.simCookies.length; c++) {
-//     storeLocTd = document.createElement('tr');
-//     storeLocTd.textContent = this.simCookies[c];
-//     tablelocation.appendChild(storeLocTd);
-//   }
-// };
+
 for (var p = 0; p < storeLocations.length; p++) {
   storeLocations[p].writetopage();
-  // storeLocations[p].cookiedata();
 }
 function handleProductCreateSubmit(event) {
   event.preventDefault();
@@ -82,6 +72,7 @@ function handleProductCreateSubmit(event) {
   storeLocations.push(newStore);
   newStore.randomCustomer();
   newStore.writetopage();
+  form.reset();
 }
 
 var createStore = document.getElementById('add-store');

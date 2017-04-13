@@ -7,11 +7,9 @@
   box-sizing: border-box;
   width: 100%;
 }
-
 html, body {
   height: 100%;
 }
-
 #topfish {
   background-image: url(https://github.com/codefellows/seattle-201d21/raw/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png);
   background-repeat: no-repeat;
@@ -24,14 +22,12 @@ html, body {
   text-align: center;
   font-family: fantasy;
 }
-
 #leftbar {
   width: 20%;
   background-color: #D9C172;;
   height: 100%;
   float: left;
 }
-
 #mainbar {
   text-align: center;
   background-color: #D7AC78;
@@ -39,12 +35,16 @@ html, body {
   width: 80%;
   float: right;
 }
-#calc {
-  font-family: Verdana;
-}
 table, tr, td {
   border: 2px solid black;
+  font-family: verdana;
+  width: 70%;
+  margin: auto;
 }
 td, tr {
   width: auto;
+}
+#add-store {
+  width: 30%;
+  margin: auto;
 }
