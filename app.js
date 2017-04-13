@@ -51,7 +51,6 @@ CookieStore.prototype.writetopage = function() {
   }
 };
 
-
 for (var p = 0; p < storeLocations.length; p++) {
   storeLocations[p].writetopage();
 }
