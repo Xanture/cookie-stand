@@ -2,9 +2,6 @@
 
 var hours = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '];
 
-var tablelocation = document.getElementById('cooltablebro');
-
-
 function CookieStore (thisStoreName, minCustomerHour, maxCustomerHour, advCustomerCookie) {
   this.thisStoreName = thisStoreName;
   this.minCustomerHour = minCustomerHour;
@@ -38,17 +35,23 @@ for (var i = 0; i < storeLocations.length; i++) {
 var storeLocTr;
 var storeLocTd;
 CookieStore.prototype.writetopage = function() {
-  for (var x = 0; x < storeLocations.length; x++) {
-    for (var y = 0; y < hours.length; y++) {
-      storeLocTr = document.createElement('td');
-      storeLocTd = document.createElement('td');
-      storeLocTd.textContent = hours[y];
-      storeLocTr.textContent = storeLocations[x].simCookies[y];
-      storesTr[x].appendChild(storeLocTd);
-      storesTr[x].appendChild(storeLocTr);
-    }
+  var tablelocation = document.getElementById('cooltablebro');
+  storeLocTr = document.createElement('th');
+  storeLocTr.textContent = this.thisStoreName;
+  tablelocation.appendChild(storeLocTr);
+  for (var c = 0; c < this.simCookies.length; c++) {
+    storeLocTd = document.createElement('td');
+    storeLocTd.textContent = this.simCookies[c];
+    tablelocation.appendChild(storeLocTd);
+  }
+  for (var h = 0; h < hours.length; h++) {
+    storeLocTd = document.createElement('tr');
+    storeLocTd.textContent = hours[h];
+    tablelocation.appendChild(storeLocTd);
   }
 };
+
+
 for (var p = 0; p < storeLocations.length; p++) {
   storeLocations[p].writetopage();
 }
