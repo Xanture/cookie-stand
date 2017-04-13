@@ -42,6 +42,9 @@ html, body {
 #calc {
   font-family: Verdana;
 }
-tr, td, th {
+table, tr, td {
   border: 2px solid black;
+}
+td, tr {
+  width: auto;
 }

@@ -32,27 +32,42 @@ for (var i = 0; i < storeLocations.length; i++) {
   storeLocations[i].randomCustomer();
 }
 
-var storeLocTr;
-var storeLocTd;
+var tableStoreCookies;
+var tableStoreData;
+var tableStoreName;
+var tableBlankSpace;
 CookieStore.prototype.writetopage = function() {
   var tablelocation = document.getElementById('cooltablebro');
-  storeLocTr = document.createElement('th');
-  storeLocTr.textContent = this.thisStoreName;
-  tablelocation.appendChild(storeLocTr);
-  for (var c = 0; c < this.simCookies.length; c++) {
-    storeLocTd = document.createElement('td');
-    storeLocTd.textContent = this.simCookies[c];
-    tablelocation.appendChild(storeLocTd);
-  }
+  tableStoreName = document.createElement('tr');
+  tableStoreName.textContent = this.thisStoreName;
+  tablelocation.appendChild(tableStoreName);
   for (var h = 0; h < hours.length; h++) {
-    storeLocTd = document.createElement('tr');
-    storeLocTd.textContent = hours[h];
-    tablelocation.appendChild(storeLocTd);
+    tableStoreData = document.createElement('td');
+    tableStoreData.textContent = hours[h];
+    tablelocation.appendChild(tableStoreData);
+  }
+  tableBlankSpace = document.createElement('tr');
+  tableBlankSpace.textContent = '';
+  tablelocation.appendChild(tableBlankSpace);
+  for (var c = 0; c < this.simCookies.length; c++) {
+    tableStoreCookies = document.createElement('td');
+    tableStoreCookies.textContent = this.simCookies[c];
+    tablelocation.appendChild(tableStoreCookies);
   }
 };
-
+  // }
+// };
+// CookieStore.prototype.cookiedata = function() {
+//   var tablelocation = document.getElementById('cooltablebro');
+//   for (var c = 0; c < this.simCookies.length; c++) {
+//     storeLocTd = document.createElement('tr');
+//     storeLocTd.textContent = this.simCookies[c];
+//     tablelocation.appendChild(storeLocTd);
+//   }
+// };
 for (var p = 0; p < storeLocations.length; p++) {
   storeLocations[p].writetopage();
+  // storeLocations[p].cookiedata();
 }
 function handleProductCreateSubmit(event) {
   event.preventDefault();
