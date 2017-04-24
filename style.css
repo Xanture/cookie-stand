@@ -1,10 +1,62 @@
+.clear-fix {
+  clear: both;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   width: 100%;
 }
-
 html, body {
   height: 100%;
+}
+#topfish {
+  background-image: url(salmon.png);
+  background-repeat: no-repeat;
+  background-color: #A54B35;
+  height: 40%;
+  width: 80%;
+  background-position: top;
+  float: right;
+  color: #BF7649;
+  text-align: center;
+  font-family: fantasy;
+}
+#leftbar {
+  width: 20%;
+  background-color: #D9C172;;
+  height: 100%;
+  float: left;
+}
+#mainbar {
+  text-align: center;
+  background-color: #D7AC78;
+  height: 60%;
+  width: 80%;
+  float: right;
+}
+table, tr, td {
+  color: Red;
+  border: 2px solid purple;
+  font-family: verdana;
+  width: 70%;
+  margin: auto;
+}
+td {
+  background-color: rgba(47, 255, 11, 0.5);
+  width: auto;
+}
+table {
+  background-image: url(salmon.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+#add-store {
+  width: 30%;
+  margin: auto;
+}
+#store-page {
+  background-image: url(https://mdn.mozillademos.org/files/11307/bubbles.png);
+  background-color: #84E8CE;
+
 }
